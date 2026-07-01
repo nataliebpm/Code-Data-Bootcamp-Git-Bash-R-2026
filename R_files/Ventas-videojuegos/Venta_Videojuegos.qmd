@@ -1,0 +1,202 @@
+---
+title: "Ventas"
+format: html
+editor: visual
+---
+
+## 
+```{r}
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+library(forcats)
+videojuegos <- read_csv("data/vgsales.csv", show_col_types = FALSE)
+
+```
+
+## Exploración inicial
+```{r}
+head(videojuegos)
+names(videojuegos)
+glimpse(videojuegos)
+```
+
+## Limipeza básica
+
+Vamos a eliminar la variación de NA's o datos que podrían causar ruido en un posterior análisis. 
+
+```{r}
+colSums(is.na(videojuegos))
+class(videojuegos$Year)
+videojuegos_limpio <- videojuegos %>%
+  mutate(
+    Year = readr::parse_number(as.character(Year))
+  ) %>%
+
+  filter(!is.na(Year))%>%
+  filter(!is.na(Publisher))
+
+dim(videojuegos)
+dim(videojuegos_limpio)
+
+class(videojuegos_limpio$Year)
+```
+
+# Tema visual
+
+```{r}
+theme_videojuegos <- function() {
+  theme_minimal(base_size = 13) +
+    theme(
+      plot.title = element_text(face = "bold", size = 16),
+      plot.subtitle = element_text(size = 11),
+      plot.caption = element_text(size = 9, color = "#659287"),
+      axis.title = element_text(face = "bold"),
+      panel.grid.minor = element_blank(),
+      legend.position = "bottom"
+    )
+}
+```
+
+# Ejericio 01: Videojuegos con mayores ventas globales
+```{r}
+top_juegos <- videojuegos_limpio %>%
+  select(Name, Platform, Year, Genre, Publisher, Global_Sales) %>%
+  arrange(desc(Global_Sales)) %>%
+  slice_head(n = 10)
+
+top_juegos
+
+top_juegos %>%
+  mutate(Name = reorder(Name, Global_Sales)) %>%
+  ggplot(aes(x = Name, y = Global_Sales, fill = Global_Sales)) +
+  geom_col() +
+  coord_flip() +
+  scale_fill_gradient(
+    low = "#80BCBD",
+    high = "#FF6868"
+  ) +
+  labs(
+    title = "Top 10 videojuegos con mayores ventas globales",
+    subtitle = "Ventas globales en millones de copias",
+    x = "Videojuego",
+    y = "Ventas globales (millones)"
+  ) +
+  theme_videojuegos() +
+  theme(legend.position = "none")
+```
+
+## Ejercicio 02: Ventas globales por género
+
+```{r}
+ventas_por_genero <- videojuegos_limpio %>%
+  group_by(Genre) %>%
+  summarise(
+    ventas_globales = sum(Global_Sales, na.rm = TRUE),
+    numero_juegos = n(),
+    .groups = "drop"
+  ) %>%
+  arrange(desc(ventas_globales))
+
+ventas_por_genero
+
+ventas_por_genero %>%
+  mutate(Genre = reorder(Genre, ventas_globales)) %>%
+  ggplot(aes(
+    x = Genre,
+    y = ventas_globales,
+    fill = ventas_globales
+  )) +
+  geom_col() +
+  coord_flip() +
+  scale_fill_gradient(
+    low = "#80BCBD",
+    high = "#007979"
+  ) +
+  labs(
+    title = "Ventas globales acumuladas por género",
+    subtitle = "Suma total de ventas globales por género",
+    x = "Género",
+    y = "Ventas globales acumuladas (millones)"
+  ) +
+  theme_videojuegos() +
+  theme(legend.position = "none")
+```
+
+# Ejercicio 03: Número de juegos y ventas globales
+```{r}
+genero_juegos_ventas <- videojuegos_limpio %>%
+  group_by(Genre) %>%
+  summarise(
+    numero_juegos = n(),
+    ventas_globales = sum(Global_Sales, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+genero_juegos_ventas
+
+ggplot(
+  genero_juegos_ventas,
+  aes(
+    x = numero_juegos,
+    y = ventas_globales,
+    label = Genre
+  )
+) +
+  geom_point(
+    color = "#6FBEB2",
+    size = 4
+  ) +
+  geom_text(
+    vjust = -0.7,
+    size = 3.5
+  ) +
+  labs(
+    title = "Número de juegos y ventas globales por género",
+    subtitle = "Cada punto representa un género",
+    x = "Número de juegos",
+    y = "Ventas globales acumuladas (millones)"
+  ) +
+  theme_videojuegos()
+```
+
+Ejercicio 04: Venta típica por género
+```{r}
+ventas_tipicas_genero <- videojuegos_limpio %>%
+  group_by(Genre) %>%
+  summarise(
+    venta_promedio = mean(Global_Sales, na.rm = TRUE),
+    venta_mediana = median(Global_Sales, na.rm = TRUE),
+    numero_juegos = n(),
+    .groups = "drop"
+  ) %>%
+  arrange(desc(venta_mediana))
+
+ventas_tipicas_genero
+
+ventas_tipicas_genero %>%
+  mutate(Genre = reorder(Genre, venta_mediana)) %>%
+  ggplot(aes(
+    x = Genre,
+    y = venta_mediana,
+    fill = venta_mediana
+  )) +
+  geom_col() +
+  coord_flip() +
+  scale_fill_gradient(
+   low = "#80BCBD",
+    high = "#FF6868"
+  ) +
+  labs(
+    title = "Venta mediana por género",
+    subtitle = "La gráfica muestra la mediana de ventas globales por videojuego",
+    x = "Género",
+    y = "Venta mediana (millones de copias)"
+  ) +
+  theme_videojuegos() +
+  theme(legend.position = "none")
+```
+
+
+
