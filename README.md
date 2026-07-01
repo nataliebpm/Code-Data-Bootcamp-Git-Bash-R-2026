@@ -1,7 +1,13 @@
+# Repositorio de ejercicios del curso
+
 ---
-# title: Repositorio de ejercicios del curso
-# author: Natalie Pineda
-# date: 01 Julio 2026
+
+### 👥 Autor 
+
+| Nombre | Usuario GitHub |
+|--------|:---------------:|
+| Pineda Morán Natalie Berenice | [@npineda](https://github.com/nataliebpm) |
+
 ---
 
 ### 📋 Información del Curso
