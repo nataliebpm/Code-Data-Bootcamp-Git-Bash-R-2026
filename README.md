@@ -33,11 +33,13 @@ Este repositorio almacena los ejercicios realizados en el curso de "Code & Data 
 
 - Creación de archivos utilizando Quarto
 
-- Creación de "Mi primer repo" en GitHub
+- Creación de "Mi primer repo" en GitHub: https://github.com/nataliebpm/Mi_primer_repo.git
 
-- Creación de página web y repositorio en GitHub
+- Creación de repositorio con colaboradores en GitHub: https://github.com/MonykRey/Mi_primer_repo-.git
 
-- Análisis del dataset sobre "Ventas de videojuegos"
+- Creación de página web en GitHub: https://nataliebpm.github.io/
+
+- Análisis del dataset sobre "Ventas de videojuegos": 
 
 - Proyecto final
 
