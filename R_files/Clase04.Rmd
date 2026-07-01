@@ -1,0 +1,42 @@
+---
+title: "Clase04: 25 junio 2026"
+author: "Natalie B. Pineda Morán"
+date: "2026-06-25"
+output: html_document
+---
+
+# Análisis de datos
+
+Para este primer archivo R Markdown analizaremos algunos datasets y haremos plots para observar el proceso de estos. 
+### Explorando datasets
+
+Vamos a utilizar la base de datos "ChickWeight". Para esto primero analizamos el dataset. 
+
+```{r}        
+data("ChickWeight")
+ChickWeight
+head(ChickWeight)
+peso_promedio <- aggregate(
+  weight ~ Diet, # En la parte de weight se quiere ver la dieta
+  data = ChickWeight, 
+  FUN = mean # Función a utilizar
+)
+peso_promedio
+```
+
+#### Plot: Peso de pollitos a través del tiempo
+
+Ahora vamos a hacer un plot comparando el tiempo y el peso de los pollitos.
+
+```{r}    
+plot(
+  ChickWeight$Time, 
+  ChickWeight$weight,  
+  xlab = "Tiempo", 
+  ylab = "Peso", 
+  main = "Peso de pollitos a través del tiempo"
+)
+```
+
+
+

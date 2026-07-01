@@ -41,7 +41,7 @@ Este repositorio almacena los ejercicios realizados en el curso de "Code & Data 
 
 - Análisis del dataset sobre "Ventas de videojuegos": 
 
-- Proyecto final
+- Proyecto final: https://github.com/MonykRey/Proyecto_final_bootcamp.git
 
 ## 📦 Requisitos y Dependencias
 
