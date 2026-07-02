@@ -1,10 +1,14 @@
 ---
 title: "Fanpage de U2"
 author: "Natalie"
-date: 26
+date: "2026-07-02"
 format: html
 editor: visual
 ---
+
+## Bienvenida
+
+¡Bienvenido/a a la fanpage de **U2**, una de las bandas de rock más influyentes de todos los tiempos! Aquí encontrarás su historia, discografía y algunos datos curiosos.
 
 ### Biografía de U2
 
@@ -19,3 +23,45 @@ Los cuatro adolescentes, que inicialmente se hacían llamar 'Feedback', ensayaba
 «Supongo que un momento decisivo fue ver a The Jam en Top of the Pops», recuerda 'Edge'. «Y darnos cuenta de que, en realidad, no saber tocar no era un problema... la música se trataba más de energía y de intentar decir algo, y no necesariamente de una gran maestría musical».
 
 Tras un breve periodo siendo representados por Adam, se reunieron con Paul McGuinness, pero un lanzamiento temprano en Irlanda en 1979, el EP 'U23' en CBS, resultó ser un éxito aislado. Tuvieron que esperar hasta el año siguiente para firmar un contrato a largo plazo con Island Records, el sello de Chris Blackwell. «Me asombró la calidad, el talento y la ambición de estos cuatro músicos, y aun así no conseguimos un contrato discográfico», recuerda McGuinness. «Todo el mundo rechazó a U2 antes de que finalmente encontráramos nuestro lugar en Island Records » .
+
+### Integrantes de la banda
+
+-   **Bono** – voz
+-   **The Edge** – guitarra
+-   **Adam Clayton** – bajo
+-   **Larry Mullen Jr.** – batería
+
+### Álbumes más destacados
+
+1.  *Boy* (1980)
+2.  *War* (1983)
+3.  *The Joshua Tree* (1987)
+4.  *Achtung Baby* (1991)
+5.  *All That You Can't Leave Behind* (2000)
+
+### Discografía en números
+
+| Álbum           | Año  | Sello discográfico |
+|-----------------|------|--------------------|
+| Boy             | 1980 | Island Records     |
+| War             | 1983 | Island Records     |
+| The Joshua Tree | 1987 | Island Records     |
+| Achtung Baby    | 1991 | Island Records     |
+
+### Galería
+
+::: {layout-ncol="3"}
+![Logo de U2](https://commons.wikimedia.org/wiki/Special:FilePath/U2.svg){fig-alt="Logo de la banda U2"}
+
+![U2 en 2015](https://commons.wikimedia.org/wiki/Special:FilePath/U2_2015.jpg){fig-alt="Fotografía de la banda U2 en 2015"}
+
+![U2 con Bill y Hillary Clinton](https://commons.wikimedia.org/wiki/Special:FilePath/President_Bill_Clinton_and_First_Lady_Hillary_Clinton_visit_with_the_band_U2.jpg){fig-alt="U2 junto al presidente Bill Clinton y la primera dama Hillary Clinton"}
+:::
+
+*Imágenes obtenidas de Wikimedia Commons. La foto "U2 en 2015" está bajo licencia CC BY-SA 4.0.*
+
+### Para saber más
+
+Puedes conocer más sobre la banda en su [sitio web oficial](https://www.u2.com).
+
+> "Music can change the world because it can change people." — Bono
