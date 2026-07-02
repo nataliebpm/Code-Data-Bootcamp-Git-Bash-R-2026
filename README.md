@@ -31,7 +31,7 @@ Este repositorio almacena los ejercicios realizados en el curso de "Code & Data 
 
 - Creación de gráficas en R
 
-- Creación de archivos utilizando Quarto
+- Creación de archivos utilizando Quarto: [Ver Fanpage de U2 (HTML)](https://github.com/nataliebpm/Code-Data-Bootcamp-Git-Bash-R-2026.git/Clase03_Mi_primer_archivo_Quarto.html)
 
 - Creación de "Mi primer repo" en GitHub: https://github.com/nataliebpm/Mi_primer_repo.git
 
